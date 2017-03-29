@@ -54,6 +54,12 @@
 		4DA299021E8B3643003B379A /* test */ = {
 			isa = PBXGroup;
 			children = (
+				4DA299151E8B3959003B379A /* Model */,
+				4DA299161E8B3960003B379A /* View */,
+				4DA299171E8B3968003B379A /* Controller */,
+				4DA299181E8B3973003B379A /* Handler */,
+				4DA299191E8B397D003B379A /* Service */,
+				4DA2991A1E8B3985003B379A /* Util */,
 				4DA299031E8B3643003B379A /* AppDelegate.swift */,
 				4DA299051E8B3643003B379A /* ViewController.swift */,
 				4DA299071E8B3643003B379A /* Main.storyboard */,
@@ -62,6 +68,48 @@
 				4DA2990F1E8B3643003B379A /* Info.plist */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		4DA299151E8B3959003B379A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4DA299161E8B3960003B379A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4DA299171E8B3968003B379A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4DA299181E8B3973003B379A /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Handler;
+			sourceTree = "<group>";
+		};
+		4DA299191E8B397D003B379A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		4DA2991A1E8B3985003B379A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
