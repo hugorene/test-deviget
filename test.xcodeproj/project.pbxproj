@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4DA299041E8B3643003B379A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA299031E8B3643003B379A /* AppDelegate.swift */; };
-		4DA299061E8B3643003B379A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA299051E8B3643003B379A /* ViewController.swift */; };
+		4DA299061E8B3643003B379A /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA299051E8B3643003B379A /* EntriesViewController.swift */; };
 		4DA299091E8B3643003B379A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA299071E8B3643003B379A /* Main.storyboard */; };
 		4DA2990B1E8B3643003B379A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DA2990A1E8B3643003B379A /* Assets.xcassets */; };
 		4DA2990E1E8B3643003B379A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DA2990C1E8B3643003B379A /* LaunchScreen.storyboard */; };
@@ -16,12 +16,13 @@
 		4DEAFCFA1E8FDBED00156079 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAFCF91E8FDBED00156079 /* Global.swift */; };
 		4DEAFCFC1E8FDCF700156079 /* EntryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAFCFB1E8FDCF700156079 /* EntryHandler.swift */; };
 		4DEAFCFE1E90482B00156079 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAFCFD1E90482B00156079 /* Entry.swift */; };
+		4DEAFD011E90580D00156079 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAFD001E90580D00156079 /* EntryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4DA299001E8B3643003B379A /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DA299031E8B3643003B379A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DA299051E8B3643003B379A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4DA299051E8B3643003B379A /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
 		4DA299081E8B3643003B379A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DA2990A1E8B3643003B379A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DA2990D1E8B3643003B379A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +31,7 @@
 		4DEAFCF91E8FDBED00156079 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		4DEAFCFB1E8FDCF700156079 /* EntryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryHandler.swift; sourceTree = "<group>"; };
 		4DEAFCFD1E90482B00156079 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		4DEAFD001E90580D00156079 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +71,6 @@
 				4DA299191E8B397D003B379A /* Service */,
 				4DA2991A1E8B3985003B379A /* Util */,
 				4DA299031E8B3643003B379A /* AppDelegate.swift */,
-				4DA299051E8B3643003B379A /* ViewController.swift */,
 				4DA299071E8B3643003B379A /* Main.storyboard */,
 				4DA2990A1E8B3643003B379A /* Assets.xcassets */,
 				4DA2990C1E8B3643003B379A /* LaunchScreen.storyboard */,
@@ -89,6 +90,7 @@
 		4DA299161E8B3960003B379A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4DEAFCFF1E9057F900156079 /* CustomCells */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -96,6 +98,7 @@
 		4DA299171E8B3968003B379A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4DA299051E8B3643003B379A /* EntriesViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -122,6 +125,14 @@
 				4DEAFCF91E8FDBED00156079 /* Global.swift */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		4DEAFCFF1E9057F900156079 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				4DEAFD001E90580D00156079 /* EntryTableViewCell.swift */,
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +167,7 @@
 				TargetAttributes = {
 					4DA298FF1E8B3642003B379A = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = LUZ6Y243TV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -198,7 +210,8 @@
 			files = (
 				4DEAFCFE1E90482B00156079 /* Entry.swift in Sources */,
 				4DEAFCFA1E8FDBED00156079 /* Global.swift in Sources */,
-				4DA299061E8B3643003B379A /* ViewController.swift in Sources */,
+				4DA299061E8B3643003B379A /* EntriesViewController.swift in Sources */,
+				4DEAFD011E90580D00156079 /* EntryTableViewCell.swift in Sources */,
 				4DEAFCFC1E8FDCF700156079 /* EntryHandler.swift in Sources */,
 				4DA299041E8B3643003B379A /* AppDelegate.swift in Sources */,
 				4DA2991C1E8B3B73003B379A /* EntryService.swift in Sources */,
@@ -324,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LUZ6Y243TV;
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hugo.test;
@@ -336,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LUZ6Y243TV;
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hugo.test;
