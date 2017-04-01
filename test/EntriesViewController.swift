@@ -17,8 +17,10 @@ class EntriesViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        entriesTableView.rowHeight = UITableViewAutomaticDimension
+        entriesTableView.estimatedRowHeight = 140
         
-        
+                
         // Do any additional setup after loading the view, typically from a nib.
         
         
@@ -59,9 +61,9 @@ class EntriesViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
+   // func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+   //     return 100
+   // }
 
 
 }
