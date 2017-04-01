@@ -9,7 +9,7 @@
 import Foundation
 
 class EntryHandler {
-    static func getEntries(completion: @escaping (_ result: Any) -> Void) {
+    static func getEntries(completion: @escaping (_ result: [Entry]) -> Void) {
         EntryService.getEntries { (result) in
             completion(result)
         }
