@@ -9,5 +9,5 @@
 import Foundation
 
 struct Global {
-    static let urlEntry = "https://www.reddit.com/top.json"
+    static let urlEntry = "https://www.reddit.com/top.json?sort=top&t=week&limit=50&after=%@"
 }

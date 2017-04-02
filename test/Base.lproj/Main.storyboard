@@ -87,18 +87,28 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="9d3-rb-M1u"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="f8W-AS-hdF">
+                                <rect key="frame" x="169.5" y="315.5" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="gQ5-fD-aAz"/>
+                                    <constraint firstAttribute="width" constant="37" id="lew-Rx-IcC"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ik6-Jr-d1i" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="BV8-7L-hvM"/>
+                            <constraint firstItem="f8W-AS-hdF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MxT-dm-Tmn"/>
                             <constraint firstItem="ik6-Jr-d1i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="TNl-uq-Hvu"/>
                             <constraint firstItem="ik6-Jr-d1i" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="VSh-PG-YVs"/>
+                            <constraint firstItem="f8W-AS-hdF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cfa-Iu-hMT"/>
                             <constraint firstItem="ik6-Jr-d1i" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="mRx-2l-4qj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Reddit" id="gcs-c0-BCu"/>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="f8W-AS-hdF" id="QPW-6x-WlA"/>
                         <outlet property="entriesTableView" destination="ik6-Jr-d1i" id="CfC-iK-EZg"/>
                         <segue destination="pxq-F8-pSW" kind="show" identifier="FullPictureSegue" id="mJD-g6-IHR"/>
                     </connections>

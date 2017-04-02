@@ -10,9 +10,9 @@ import Foundation
 
 class EntryService {
     
-    static func getEntries(completion: @escaping (_ result: [Entry]) -> Void) {
+    static func getEntries(after: String, completion: @escaping (_ result: [Entry], _ after: String) -> Void) {
         
-        let entryEndpoint: String = Global.urlEntry
+        let entryEndpoint = String(format: Global.urlEntry, arguments: [after])
         guard let url = URL(string: entryEndpoint) else {
             print("Error: cannot create URL")
             return
@@ -46,7 +46,8 @@ class EntryService {
                     }
                 }
                 
-                completion(entries)
+                let after = json["data"]?["after"] as! String
+                completion(entries, after)
             } catch  {
                 print("error trying to convert data to JSON")
                 return

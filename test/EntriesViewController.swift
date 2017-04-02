@@ -11,7 +11,9 @@ import UIKit
 class EntriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EntryTableViewCellDelegate {
     
     @IBOutlet weak var entriesTableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     var entries: [Entry] = []
+    var after = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +22,12 @@ class EntriesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        EntryHandler.getEntries { (entries) in
+        self.activityIndicatorView.startAnimating()
+        EntryHandler.getEntries(after: after) { (entries, after) in
+            self.after = after
             self.entries = entries
             DispatchQueue.main.async {
+                self.activityIndicatorView.stopAnimating()
                 self.entriesTableView.reloadData()
             }
         }
@@ -51,6 +56,25 @@ class EntriesViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.delegate = self        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == self.entries.count-1 {
+            self.activityIndicatorView.startAnimating()
+            EntryHandler.getEntries(after: self.after) { (entries, after) in
+                self.after = after
+                let mergedArray = [self.entries, entries].flatMap({ (element: [Entry]) -> [Entry] in
+                    return element
+                })
+                
+                self.entries = mergedArray
+                DispatchQueue.main.async {
+                    self.activityIndicatorView.stopAnimating()
+                    self.entriesTableView.reloadData()
+                }
+            }
+        }
+    }
+    
     
     // MARK: - EntryTableViewCellDelegate
     

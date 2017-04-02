@@ -9,9 +9,9 @@
 import Foundation
 
 class EntryHandler {
-    static func getEntries(completion: @escaping (_ result: [Entry]) -> Void) {
-        EntryService.getEntries { (result) in
-            completion(result)
+    static func getEntries(after: String, completion: @escaping (_ result: [Entry], _ after: String) -> Void) {
+        EntryService.getEntries(after: after) { (result, after) in
+            completion(result, after)
         }
     }
 }
