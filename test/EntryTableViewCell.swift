@@ -29,8 +29,8 @@ class EntryTableViewCell: UITableViewCell {
     
     func setData(entry: Entry){
         self.titleLabel.text = entry.title
-        self.dateAuthorLabel.text = getHoursAgo(timestamp: entry.created_utc)
-        self.numberCommentsLabel.text = String(entry.num_comments)
+        self.dateAuthorLabel.text = getHoursAgo(timestamp: entry.created_utc) + " by " + entry.author
+        self.numberCommentsLabel.text =  "\(entry.num_comments) comments"
         downloadImage(url: URL(string: entry.thumbnail)!)
     }
     
