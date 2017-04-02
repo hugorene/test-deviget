@@ -29,7 +29,7 @@ class EntryTableViewCell: UITableViewCell {
     
     func setData(entry: Entry){
         self.titleLabel.text = entry.title
-        self.dateAuthorLabel.text = entry.author
+        self.dateAuthorLabel.text = getHoursAgo(timestamp: entry.created_utc)
         self.numberCommentsLabel.text = String(entry.num_comments)
         downloadImage(url: URL(string: entry.thumbnail)!)
     }
@@ -48,6 +48,26 @@ class EntryTableViewCell: UITableViewCell {
             (data, response, error) in
             completion(data, response, error)
             }.resume()
+    }
+    
+    func getHoursAgo(timestamp: Int) -> String {
+        
+        let currentDate = NSDate();
+        print(currentDate)
+        
+        let dateEntry = NSDate(timeIntervalSince1970: TimeInterval(timestamp))
+        print(dateEntry)
+        
+        let calendar = NSCalendar.current
+        let unitFlags = Set<Calendar.Component>([.hour])
+        let components = calendar.dateComponents(unitFlags, from: dateEntry as Date, to: currentDate as Date)
+ 
+        if components.hour! >= 2 {
+            return "\(components.hour!) hours ago"
+        } else {
+            return "1 hours ago"
+        }
+    
     }
 
 }

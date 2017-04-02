@@ -11,14 +11,14 @@ import Foundation
 struct Entry {
     let title: String
     let author: String
-    let created: Int
+    let created_utc: Int
     let thumbnail: String
     let num_comments: Int
     
     init?(json: [String: Any]) {
         guard let title = json["title"] as? String,
             let author = json["author"] as? String,
-            let created = json["created"] as? Int,
+            let created_utc = json["created_utc"] as? Int,
             let thumbnail = json["thumbnail"] as? String,
             let num_comments = json["num_comments"] as? Int
         else {
@@ -27,7 +27,7 @@ struct Entry {
         
         self.title = title
         self.author = author
-        self.created = created
+        self.created_utc = created_utc
         self.thumbnail = thumbnail
         self.num_comments = num_comments
         
