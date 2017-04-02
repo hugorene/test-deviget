@@ -22,7 +22,6 @@ class EntryTableViewCell: UITableViewCell {
     @IBOutlet weak var numberCommentsLabel: UILabel!
     @IBOutlet weak var thumbnailImageView: UIImageView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -59,10 +58,8 @@ class EntryTableViewCell: UITableViewCell {
     }
     
     func getHoursAgo(timestamp: Int) -> String {
-        
         let currentDate = NSDate();
         let dateEntry = NSDate(timeIntervalSince1970: TimeInterval(timestamp))
-
         let calendar = NSCalendar.current
         let unitFlags = Set<Calendar.Component>([.hour])
         let components = calendar.dateComponents(unitFlags, from: dateEntry as Date, to: currentDate as Date)
@@ -72,7 +69,6 @@ class EntryTableViewCell: UITableViewCell {
         } else {
             return "1 hours ago"
         }
-    
     }
     
     func setPictureGesture(urlPicture: String) {
@@ -80,9 +76,7 @@ class EntryTableViewCell: UITableViewCell {
         self.urlPicture = urlPicture
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tappedOnImage(_:)))
         tapGesture.numberOfTapsRequired = 1
-        
         self.thumbnailImageView?.addGestureRecognizer(tapGesture)
-
     }
     
     func tappedOnImage(_ sender: UITapGestureRecognizer) {

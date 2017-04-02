@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Entry: NSObject {
+class Entry {
     let title: String
     let author: String
     let created_utc: Int
@@ -16,6 +16,7 @@ class Entry: NSObject {
     let num_comments: Int
     
     init?(json: [String: Any]) {
+        
         guard let title = json["title"] as? String,
             let author = json["author"] as? String,
             let created_utc = json["created_utc"] as? Int,
@@ -30,6 +31,5 @@ class Entry: NSObject {
         self.created_utc = created_utc
         self.thumbnail = thumbnail
         self.num_comments = num_comments
-        
     }
 }
