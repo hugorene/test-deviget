@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol EntryTableViewCellDelegate {
+    func selectedPicture(picture: UIImage)
+}
+
 class EntryTableViewCell: UITableViewCell {
+    
+    var delegate: EntryTableViewCellDelegate?
+    var urlPicture: String?
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateAuthorLabel: UILabel!
@@ -32,6 +39,7 @@ class EntryTableViewCell: UITableViewCell {
         self.dateAuthorLabel.text = getHoursAgo(timestamp: entry.created_utc) + " by " + entry.author
         self.numberCommentsLabel.text =  "\(entry.num_comments) comments"
         downloadImage(url: URL(string: entry.thumbnail)!)
+        setPictureGesture(urlPicture: entry.thumbnail)
     }
     
     func downloadImage(url: URL) {
@@ -53,11 +61,8 @@ class EntryTableViewCell: UITableViewCell {
     func getHoursAgo(timestamp: Int) -> String {
         
         let currentDate = NSDate();
-        print(currentDate)
-        
         let dateEntry = NSDate(timeIntervalSince1970: TimeInterval(timestamp))
-        print(dateEntry)
-        
+
         let calendar = NSCalendar.current
         let unitFlags = Set<Calendar.Component>([.hour])
         let components = calendar.dateComponents(unitFlags, from: dateEntry as Date, to: currentDate as Date)
@@ -69,5 +74,18 @@ class EntryTableViewCell: UITableViewCell {
         }
     
     }
+    
+    func setPictureGesture(urlPicture: String) {
+        self.thumbnailImageView.isUserInteractionEnabled = true
+        self.urlPicture = urlPicture
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tappedOnImage(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        
+        self.thumbnailImageView?.addGestureRecognizer(tapGesture)
 
+    }
+    
+    func tappedOnImage(_ sender: UITapGestureRecognizer) {
+        delegate?.selectedPicture(picture: self.thumbnailImageView.image!)
+    }
 }

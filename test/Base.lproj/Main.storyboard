@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="entryCell" rowHeight="100" id="5FU-Hl-tLQ" customClass="EntryTableViewCell" customModule="test" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="entryCell" rowHeight="100" id="5FU-Hl-tLQ" customClass="EntryTableViewCell" customModule="test" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5FU-Hl-tLQ" id="ca4-EV-MFi">
@@ -89,6 +89,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="ik6-Jr-d1i" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="BV8-7L-hvM"/>
                             <constraint firstItem="ik6-Jr-d1i" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="TNl-uq-Hvu"/>
@@ -99,11 +100,52 @@
                     <navigationItem key="navigationItem" title="Reddit" id="gcs-c0-BCu"/>
                     <connections>
                         <outlet property="entriesTableView" destination="ik6-Jr-d1i" id="CfC-iK-EZg"/>
+                        <segue destination="pxq-F8-pSW" kind="show" identifier="FullPictureSegue" id="mJD-g6-IHR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="Cu4-b3-hc2"/>
             </objects>
             <point key="canvasLocation" x="975.20000000000005" y="37.331334332833585"/>
+        </scene>
+        <!--Full Picture View Controller-->
+        <scene sceneID="Mdy-aV-dC5">
+            <objects>
+                <viewController id="pxq-F8-pSW" customClass="FullPictureViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eJD-Ox-mLw"/>
+                        <viewControllerLayoutGuide type="bottom" id="oik-Pj-ieE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rFl-sb-cq6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eyD-b5-Z6d">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LSt-bd-r6i">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="save" id="olK-EH-pWw"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="eyD-b5-Z6d" secondAttribute="trailing" constant="-16" id="GnV-wz-P9q"/>
+                            <constraint firstItem="eyD-b5-Z6d" firstAttribute="leading" secondItem="rFl-sb-cq6" secondAttribute="leadingMargin" constant="-16" id="kYF-7f-p5B"/>
+                            <constraint firstItem="oik-Pj-ieE" firstAttribute="top" secondItem="eyD-b5-Z6d" secondAttribute="bottom" constant="44" id="qFg-EA-Bgp"/>
+                            <constraint firstItem="eyD-b5-Z6d" firstAttribute="top" secondItem="eJD-Ox-mLw" secondAttribute="bottom" id="sGq-jH-Isa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pictureImageView" destination="eyD-b5-Z6d" id="YyM-u2-x2A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4HO-E3-3tt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2061.5999999999999" y="36.431784107946029"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="K5e-7h-bUb">

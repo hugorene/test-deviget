@@ -17,6 +17,7 @@
 		4DEAFCFC1E8FDCF700156079 /* EntryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAFCFB1E8FDCF700156079 /* EntryHandler.swift */; };
 		4DEAFCFE1E90482B00156079 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAFCFD1E90482B00156079 /* Entry.swift */; };
 		4DEAFD011E90580D00156079 /* EntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAFD001E90580D00156079 /* EntryTableViewCell.swift */; };
+		4DEAFD031E90823600156079 /* FullPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DEAFD021E90823600156079 /* FullPictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4DEAFCFB1E8FDCF700156079 /* EntryHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryHandler.swift; sourceTree = "<group>"; };
 		4DEAFCFD1E90482B00156079 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		4DEAFD001E90580D00156079 /* EntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTableViewCell.swift; sourceTree = "<group>"; };
+		4DEAFD021E90823600156079 /* FullPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullPictureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				4DA299051E8B3643003B379A /* EntriesViewController.swift */,
+				4DEAFD021E90823600156079 /* FullPictureViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DEAFD031E90823600156079 /* FullPictureViewController.swift in Sources */,
 				4DEAFCFE1E90482B00156079 /* Entry.swift in Sources */,
 				4DEAFCFA1E8FDBED00156079 /* Global.swift in Sources */,
 				4DA299061E8B3643003B379A /* EntriesViewController.swift in Sources */,
