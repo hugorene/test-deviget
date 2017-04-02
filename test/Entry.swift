@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Entry {
+class Entry: NSObject {
     let title: String
     let author: String
     let created_utc: Int

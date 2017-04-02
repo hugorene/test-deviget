@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EntriesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, EntryTableViewCellDelegate {
     
@@ -88,6 +89,19 @@ class EntriesViewController: UIViewController, UITableViewDelegate, UITableViewD
         let picture = sender as! UIImage
         let fullPictureViewController = segue.destination as! FullPictureViewController
         fullPictureViewController.picture = picture
+    }
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        coder.encode(self.entriesTableView.contentOffset, forKey: "contentOffset")
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        
+        if let contentOffset = coder.decodeCGPoint(forKey: "contentOffset") as? CGPoint {
+            self.entriesTableView.contentOffset = contentOffset
+        }
     }
     
 }
